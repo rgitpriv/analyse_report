@@ -21,10 +21,12 @@ signal.signal(signal.SIGINT, sigIntHandler)
 
 print(f'Focus chat window target, you have {START_DELAY} seconds')
 time.sleep(START_DELAY)
+print('Scanning archives..')
 
 if __name__ == "__main__":
     while True:
         ag.keyDown('shift')
         report = random.randint(0, MAX_IDLE)
+        print(f'Found {report} records - processing...')
         ag.keyUp('shift')
         time.sleep(report)
